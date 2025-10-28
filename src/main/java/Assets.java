@@ -2,6 +2,7 @@ public class Assets {
     private String description;
     private String dateAcquired;
     private double originalCost;
+    private static String company = "YUU";
 
     public Assets(){}
 
@@ -9,7 +10,6 @@ public class Assets {
         this.description = description;
         this.dateAcquired = dateAcquired;
         this.originalCost = originalCost;
-        System.out.println("You look like you need an asset...!");
     }
 
     //region getters
@@ -33,10 +33,22 @@ public class Assets {
     public void setOriginalCost(double originalCost) {
         this.originalCost = originalCost;
     }
+
+    public static String getCompany(){
+        return company;
+    }
     //endregion
 
     public double getValue(){
         return originalCost;
     }
 
+    public void display(){
+        System.out.printf("""
+                Description: %s
+                Date Acquired: %s
+                Original Cost Paid: $%.2f
+                Current Value: $%.2f%n
+                """, description, dateAcquired, originalCost, getValue());
+    }
 }
