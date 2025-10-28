@@ -36,6 +36,7 @@ public class Vehicle extends Assets{
     }
     //endregion
 
+    @Override
     public double getValue(){
         LocalDate now = LocalDate.now();
         double age = (Double.parseDouble(getDateAcquired()) - year) + now.getYear();
